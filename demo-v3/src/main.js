@@ -5,6 +5,7 @@ import Highcharts from 'highcharts'
 import stockInit from 'highcharts/modules/stock'
 import mapInit from 'highcharts/modules/map'
 import addWorldMap from './js/worldmap'
+import router from './js/router'
 
 stockInit(Highcharts)
 mapInit(Highcharts)
@@ -12,5 +13,6 @@ addWorldMap(Highcharts)
 
 const app = createApp(App);
 
+app.use(router)
 app.use(HighchartsVue)
 app.mount("#app");

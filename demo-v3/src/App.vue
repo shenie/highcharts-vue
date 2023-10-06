@@ -13,13 +13,14 @@
       <button @click="select('mapChart')" :class="{btnActive: selected === 'mapChart'}">Map Chart</button>
       <button @click="select('chartCompositionApi')" :class="{btnActive: selected === 'chartCompositionApi'}">Chart (Composition API)</button>
     </div>
-    <keep-alive>
-      <component :is="currentView"></component>
-    </keep-alive>
+    <suspense>
+      <router-view :key="$route.path"></router-view>
+    </suspense>
   </div>
 </template>
 
 <script>
+/* eslint-disable vue/no-unused-components */
 import Chart from './components/Chart.vue'
 import StockChart from './components/StockChart'
 import MapChart from './components/MapChart'

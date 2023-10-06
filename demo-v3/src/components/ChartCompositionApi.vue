@@ -62,6 +62,8 @@
 
 import { ref, watch } from 'vue';
 
+await new Promise(resolve => setTimeout(resolve))
+
 const title = ref(''),
   durationOptions = ref([0, 500, 1000, 2000]),
   points = ref([10, 0, 8, 2, 6, 4, 5, 5]),
